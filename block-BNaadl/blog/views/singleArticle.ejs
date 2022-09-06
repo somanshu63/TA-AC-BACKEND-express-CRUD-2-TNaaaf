@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>article</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <script src="https://kit.fontawesome.com/615eec2c8f.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<header>
+
+</header>
+<main>
+    <div class="singlearticle articleslist">
+        <h1><%= article.title %></h1>
+        <p><%= article.description %></p>
+        <ul>
+            <% article.tags.forEach(tag => { %>
+                <li><%= tag %></li>
+            <% }) %>
+        </ul>
+        <h3><%= article.author %></h3>
+        <h4><%= article.likes %></h4>
+        <a href="/articles/<%= article._id %>/addlike/<%= article.likes %>">increament like</a>
+        <a href="/articles/<%= article._id %>/sublike/<%= article.likes %>">decrement like</a>
+        <a href="/articles/<%= article._id %>/edit">edit article</a>
+        <a href="/articles/<%= article._id %>/delete">delete article</a>
+    </div>
+</main>
+<footer>
+
+</footer>
+</body>

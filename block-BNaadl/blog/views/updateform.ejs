@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>updateform</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <script src="https://kit.fontawesome.com/615eec2c8f.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<header>
+
+</header>
+<main>
+    <div class="articleform articleslist">
+        <form action="/articles/<%= article._id %>/edit" method="post">
+            <fieldset>
+                <input type="text" name="title" id="" placeholder="enter title" value="<%= article.title %>">
+                <textarea name="description" id="" cols="30" rows="10" placeholder="enter description"><%= article.description %></textarea>
+                <input type="text" name="tags" id="" placeholder="enter tags" value="<%= article.tags %>">
+                <input type="text" name="author" id="" placeholder="enter author" value="<%= article.author %>">
+                <input type="number" name="likes" id="" placeholder="enter likes" value="<%= article.likes %>">
+                <input type="submit" value="update articles">
+            </fieldset>
+        </form>
+        <a href="/articles">home</a>
+        <a href="/articles/<%= article._id %>">article details</a>
+    </div>
+</main>
+<footer>
+
+</footer>
+</body>

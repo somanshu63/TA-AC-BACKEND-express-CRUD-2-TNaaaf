@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>article</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <script src="https://kit.fontawesome.com/615eec2c8f.js" crossorigin="anonymous"></script>
+</head>
+<style>
+    header{
+        width: 300px;
+        margin: 0 auto;
+    }
+    header a{
+        color: white;
+        font-size: 18px;
+        background-color: red;
+        padding: 8px;
+        text-decoration: none;
+        border-radius: 5px;
+    }
+    h1{
+        text-transform: capitalize;
+
+    }
+    p{
+        font-size: 18px;
+    }
+    h3{
+        color: red;
+        font-size: 20px;
+    }
+    h4{
+        color: steelblue;
+        font-size: 18px;
+    }
+    li:nth-child(1){
+        margin-left: -2rem;
+    }
+    li{
+        list-style: none;
+        padding: 8px;
+        border-radius: 5px;
+        background-color: darkgreen;
+        color: rgb(241, 239, 239);
+        margin: 0.5rem;
+        display: inline-flex;
+    }
+    .like{
+        background-color: green;
+    }
+    .dislike{
+        background-color: orange;
+    }
+    .edit{
+        background-color: blue;
+    }
+    .delete{
+        background-color: red;
+    }
+</style>
+<body>
+<header>
+    <a href="/">home</a>
+</header>
+<main>
+    <div class="singlearticle articleslist">
+        <h1><%= article.title %></h1>
+        <h3><%= article.author %></h3>
+        <ul>
+            <% article.tags.forEach(tag => { %>
+                <li><%= tag %></li>
+            <% }) %>
+        </ul>
+        <p><%= article.description %></p>
+        <h4><%= article.likes %></h4>
+        <a class="like" href="/articles/<%= article._id %>/addlike/<%= article.likes %>">like</a>
+        <a class="dislike" href="/articles/<%= article._id %>/sublike/<%= article.likes %>">dislike</a>
+        <a class="edit" href="/articles/<%= article._id %>/edit">edit article</a>
+        <a class="delete" href="/articles/<%= article._id %>/delete">delete article</a>
+    </div>
+</main>
+<footer>
+
+</footer>
+</body>

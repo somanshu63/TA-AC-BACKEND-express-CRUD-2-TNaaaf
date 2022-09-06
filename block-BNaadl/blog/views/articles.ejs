@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>articles</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <script src="https://kit.fontawesome.com/615eec2c8f.js" crossorigin="anonymous"></script>
+</head>
+<style>
+    body{
+      text-align: center;
+    }
+    h3{
+        font-size: 30px;
+        margin-right: 2rem;
+        text-transform: capitalize;
+    }
+    a{
+        text-decoration: none;
+
+    }
+    header a{
+        color: white;
+        font-size: 18px;
+        padding: 8px;
+        text-decoration: none;
+        border-radius: 5px;
+    }
+    .home{
+        background-color: red;
+    }
+    .create{
+        background-color: green;
+    }
+</style>
+<body>
+<header>
+    <a href="/" class="home">home</a>
+    <a href="/articles/new" class="create">create article</a>
+</header>
+<main>
+    <div class="articleslist">
+        <h1>List of Articles</h1>
+        <ul>
+            <% articlesList.forEach(article => { %>
+                <a href="/articles/<%= article._id %>">
+                    <h3><%= article.title %></h3>
+                </a>
+            <% }) %>
+        </ul>
+    </div>
+</main>
+<footer>
+
+</footer>
+</body>

@@ -4,8 +4,30 @@
     <title><%= title %></title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
+  <style>
+    body{
+      width: 300px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    p{
+      margin: 2rem 0;
+      font-size: 18px;
+      color: blueviolet;
+    }
+    a{
+      font-size: 20px;
+      color: blue;
+      padding: 8px;
+      text-decoration: none;
+      background-color: yellowgreen;
+    }
+  </style>
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+    <h1>Article Store</h1>
+    <p>Welcome to Article Store</p>
+    <a href="/articles">
+      Show Articles
+    </a>
   </body>
 </html>

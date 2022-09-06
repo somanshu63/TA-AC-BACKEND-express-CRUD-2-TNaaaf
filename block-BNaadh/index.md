@@ -12,10 +12,10 @@ Q. write express generator command with varying options to generate express app 
   //express --git sample3
 
 - express app with sass support for styling.
-  //express --css sample4
+  //express --css sass sample4
 
 - ejs as template engine and sass for styling
-  //express --view=ejs --css sample5
+  //express --view=ejs --css sass sample5
 
 - pug as template engine and gitignore together
-  //express --view=pug --css sample7
+  //express --view=pug --css sass sample7

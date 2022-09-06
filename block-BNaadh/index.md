@@ -18,4 +18,4 @@ Q. write express generator command with varying options to generate express app 
   //express --view=ejs --css sample5
 
 - pug as template engine and gitignore together
-  //express --view=pug --css sample6
+  //express --view=pug --css sample7

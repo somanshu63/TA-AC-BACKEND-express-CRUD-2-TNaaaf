@@ -1,0 +1,17 @@
+<%- include('partials/header') -%>
+<main>
+    <div class="articleform articleslist">
+        <form action="/articles/<%= article._id %>/edit" method="post">
+            <fieldset>
+                <input type="text" name="title" id="" placeholder="enter title" value="<%= article.title %>">
+                <textarea name="description" id="" cols="30" rows="10" placeholder="enter description"><%= article.description %></textarea>
+                <input type="text" name="tags" id="" placeholder="enter tags" value="<%= article.tags %>">
+                <input type="text" name="author" id="" placeholder="enter author" value="<%= article.author %>">
+                <input type="number" name="likes" id="" placeholder="enter likes" value="<%= article.likes %>">
+                <input type="submit" value="update articles">
+            </fieldset>
+        </form>
+        <a class="btn-big btn-green" href="/articles/<%= article._id %>">article details</a>
+    </div>
+</main>
+<%- include('partials/footer') -%>

@@ -1,0 +1,14 @@
+<%- include('partials/header') -%>
+<main>
+    <div class="articleslist">
+        <h1>List of Articles</h1>
+        <ul>
+            <% articlesList.forEach(article => { %>
+                <a href="/articles/<%= article._id %>">
+                    <h3><%= article.title %></h3>
+                </a>
+            <% }) %>
+        </ul>
+    </div>
+</main>
+<%- include('partials/footer') -%>

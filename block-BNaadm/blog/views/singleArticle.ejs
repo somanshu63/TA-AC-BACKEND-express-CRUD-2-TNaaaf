@@ -1,0 +1,49 @@
+<%- include('partials/header') -%>
+
+<main>
+    <div class="singlearticle articleslist">
+        <h1><%= article.title %></h1>
+        <h3><%= article.author %></h3>
+        <ul class="flex justify-left">
+            <% article.tags.forEach(tag => { %>
+                <li><%= tag %></li>
+            <% }) %>
+        </ul>
+        <p><%= article.description %></p>
+        <h4><%= article.likes %></h4>
+        <div>
+            <a class="btn-small btn-green like" href="/articles/<%= article._id %>/addlike/<%= article.likes %>">like</a>
+            <a class="btn-small btn-red dislike" href="/articles/<%= article._id %>/sublike/<%= article.likes %>">dislike</a>
+        </div>
+        <div>
+            <a class="btn-small btn-blue edit" href="/articles/<%= article._id %>/edit">edit article</a>
+            <a class="btn-small btn-red delete" href="/articles/<%= article._id %>/delete">delete article</a>
+        </div>
+        <div class="comment">
+            <form action="/articles/<%= article._id %>/comment" method="post" class="commentform">
+                <textarea name="content" id="" cols="20" rows="3" placeholder="enter comment"></textarea>
+                <input type="number" name="likes" id="" placeholder="enter likes">
+                <input type="text" name="author" id="" placeholder="enter author">
+                <input type="submit" value="Add Comment">
+            </form>
+            <h2>Comments</h2>
+            <hr>
+            <% article.comments.forEach(c => { %>
+                <h4><%= c.content %></h4>
+                <ul class="flex justify-left">
+                    <li><%= c.author %></li>
+                    <li><%= c.likes %></li>
+                </ul>
+                <div>
+                    <a class="btn-very-small btn-green like" href="/comments/<%= c._id %>/like">like</a>
+                    <a class="btn-very-small btn-red dislike" href="/comments/<%= c._id %>/dislike">dislike</a>
+                </div>
+                <div>
+                    <a class="btn-very-small btn-blue edit" href="/comments/<%= c._id %>/edit">edit comment</a>
+                    <a class="btn-very-small btn-red delete" href="/comments/<%= c._id %>/delete">delete comment</a>
+                </div>
+            <% }) %>
+        </div>
+    </div>
+</main>
+<%- include('partials/footer') -%>

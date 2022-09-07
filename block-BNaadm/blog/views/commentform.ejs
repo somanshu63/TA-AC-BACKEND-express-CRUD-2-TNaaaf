@@ -1,0 +1,9 @@
+<%- include('partials/header') -%>
+<main>
+    <form action="/comments/<%= comment._id %>/edit" method="post" class="commentform updatecommentform">
+        <textarea name="content" id="" cols="20" rows="3" placeholder="enter comment"><%= comment.content%></textarea>
+        <input type="number" name="likes" id="" placeholder="enter likes" value="<%= comment.likes%>">
+        <input type="text" name="author" id="" placeholder="enter author" value="<%= comment.author%>">
+        <input type="submit" value="Add Comment">
+    </form>
+</main>

@@ -1,0 +1,27 @@
+<%- include(`partials/header`) -%>
+<main>
+    <div class="form bookform">
+        <h1>Enter book details</h1>
+        <form action="/books/<%= book.id %>" method="post" class="bookform">
+            <fieldset>
+                <input type="text" name="title" id="" value="<%= book.title %>" placeholder="enter title">
+                <textarea name="summary" id="" cols="30" rows="5" placeholder="enter summary"><%= book.summary %></textarea>
+                <input type="number" name="pages" id="" value="<%= book.pages %>" placeholder="enter pages">
+                <input type="text" name="publication" id="" value="<%= book.publication %>" placeholder="enter publication">
+                <input type="text" name="cover_image" id="" value="<%= book.cover_image %>" placeholder="enter cover image">
+                <input type="text" name="category" id="" value="<%= book.category %>" placeholder="enter category">
+                <div class="selectauthors white">
+                    <h5>Select Author</h5>
+                    <% authors.forEach(a => { %>
+                        <div class="flex">
+                            <label class="labelradio" for="<%= a.name %>"><%= a.name %></label>
+                            <input type="radio" name="authorId" class="radio" id="<%= a.name %>" value="<%= a._id %>">
+                        </div>
+                    <% }) %>
+                </div>
+                <input type="submit" value="Add Book">
+            </fieldset>
+        </form>
+    </div>
+</main>
+<%- include(`partials/footer`) -%>

@@ -1,0 +1,12 @@
+<%- include('partials/header') -%>
+<main>
+  <div class="index text-center">
+    <p>select an author</p>
+    <div class="list">
+      <% authors.forEach(a => { %>
+        <a class="btn-big btn-blue" href="/authors/<%= a.id %>"><%= a.name %></a>
+      <% }) %>
+    </div>
+  </div>
+</main>
+<%- include('partials/footer') -%>

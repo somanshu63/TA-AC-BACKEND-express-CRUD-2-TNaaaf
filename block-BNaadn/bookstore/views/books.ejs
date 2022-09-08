@@ -1,0 +1,11 @@
+<%- include('partials/header') -%>
+<main>
+    <div class="books">
+        <% books.forEach(b => { %>
+            <a href="/books/<%= b._id %>">
+                <h3><%= b.title %></h3>
+            </a>
+         <% }) %>
+    </div>
+</main>
+<%- include('partials/footer') -%>

@@ -1,0 +1,25 @@
+<%- include('partials/header') -%>
+<main>
+    <div class="authors margin3">
+        <h2><%= author.name %></h2>
+        <h5><%= author.email %></h5>
+        <h5><%= author.country %></h5>
+        <ul>
+            <% author.bookId.forEach(a => { %>
+                <li><%= a.title %></li>
+            <% }) %>
+        </ul>
+        <a href="/authors/<%= author.id %>/edit" class="btn-big btn-blue">Edit Author</a>
+        <a href="/authors/<%= author.id %>/delete" class="btn-big btn-red">Delete Author</a>
+        <h4>List of Books</h4>
+        <ul>
+            <% books.forEach(b => { %>
+                <a href="/books/<%= b.id %>">
+                    <li><%= b.title %></li>
+                </a>
+            <% }) %>
+        </ul>
+        
+    </div>
+</main>
+<%- include('partials/footer') -%>

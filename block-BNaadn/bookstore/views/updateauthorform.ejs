@@ -1,0 +1,15 @@
+<%- include(`partials/header`) -%>
+<main>
+    <div class="form authorform">
+        <h1>Enter Author details</h1>
+        <form action="/authors/<%= author.id %>" method="post" class="authorform">
+            <fieldset>
+                <input type="text" name="name" id="" value="<%= author.name %>" placeholder="enter name">
+                <input type="email" name="email" id="" value="<%= author.email %>" placeholder="enter email">
+                <input type="text" name="country" id="" value="<%= author.country %>" placeholder="enter country">
+                <input type="submit" value="Update Author">
+            </fieldset>
+        </form>
+    </div>
+</main>
+<%- include(`partials/footer`) -%>

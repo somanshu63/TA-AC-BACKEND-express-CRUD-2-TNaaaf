@@ -1,0 +1,21 @@
+<%- include('partials/header') -%>
+<main>
+    <div class="singlebook">
+        <h2><%= book.title %></h2>
+        <a href="/authors/<%= author.id %>">
+            <h3><%= author.name %></h3>
+        </a>
+        <img src="<%= book.cover_image %>" alt="">
+        <p><%= book.summary %></p>
+        <h5><%= book.pages %></h5>
+        <h5><%= book.publication %></h5>
+        <ul>
+            <% book.category.forEach(c => { %>
+                <li><%= c %></li>
+            <% }) %>
+        </ul>
+        <a href="/books/<%= book.id %>/edit" class="btn-big btn-blue">Edit Book</a>
+        <a href="/books/<%= book.id %>/delete" class="btn-big btn-red">Delete Book</a>
+    </div>
+</main>
+<%- include('partials/footer') -%>
